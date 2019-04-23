@@ -3,7 +3,7 @@
 System.register(['app/core/core'], function (_export, _context) {
   "use strict";
 
-  var appEvents, hostname, postgRestHost, influxHost, post, remove, get, update, alert, showModal, showModalWithScope, spaceCheck, mergeColsRows, findLine;
+  var appEvents, hostname, postgRestHost, influxHost, post, get, update, alert, showModal, mergeColsRows, findLine;
   return {
     setters: [function (_appCoreCore) {
       appEvents = _appCoreCore.appEvents;
@@ -49,34 +49,6 @@ System.register(['app/core/core'], function (_export, _context) {
       });
 
       _export('post', post);
-
-      _export('remove', remove = function remove(url) {
-        return new Promise(function (resolve, reject) {
-          var xhr = new XMLHttpRequest();
-          xhr.open('DELETE', url);
-          xhr.onreadystatechange = handleResponse;
-          xhr.onerror = function (e) {
-            return reject(e);
-          };
-          xhr.send();
-
-          function handleResponse() {
-            if (xhr.readyState === 4) {
-              if (xhr.status === 200) {
-                // console.log('200');
-                resolve(xhr.responseText);
-              } else if (xhr.status === 204) {
-                // console.log('204');
-                resolve(xhr.responseText);
-              } else {
-                reject(this.statusText);
-              }
-            }
-          }
-        });
-      });
-
-      _export('remove', remove);
 
       _export('get', get = function get(url) {
         return new Promise(function (resolve, reject) {
@@ -149,26 +121,6 @@ System.register(['app/core/core'], function (_export, _context) {
       });
 
       _export('showModal', showModal);
-
-      _export('showModalWithScope', showModalWithScope = function showModalWithScope(ctrl, scope, html) {
-        ctrl.publishAppEvent('show-modal', {
-          src: 'public/plugins/smart-factory-prod-line-time-setter-panel/partials/' + html,
-          modalClass: 'confirm-modal',
-          scope: scope
-        });
-      });
-
-      _export('showModalWithScope', showModalWithScope);
-
-      _export('spaceCheck', spaceCheck = function spaceCheck(str) {
-        if (str[str.length - 1] === ' ') {
-          str = str.slice(0, -1);
-          return spaceCheck(str);
-        }
-        return str;
-      });
-
-      _export('spaceCheck', spaceCheck);
 
       _export('mergeColsRows', mergeColsRows = function mergeColsRows(cols, rows) {
         var result = [];

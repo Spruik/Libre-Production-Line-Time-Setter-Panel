@@ -294,7 +294,6 @@ System.register(['lodash', 'jquery', 'app/plugins/sdk', './transformers', './edi
             var data = void 0;
             var panel = ctrl.panel;
             var pageCount = 0;
-            console.log(ctrl);
 
             function getTableHeight() {
               var panelHeight = ctrl.height;
