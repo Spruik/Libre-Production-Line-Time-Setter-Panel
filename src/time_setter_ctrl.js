@@ -7,15 +7,13 @@ export class TimeSetterCtrl {
   constructor(ctrl, data) {
     this.panelCtrl = ctrl;
     this.panelCtrl.productionLine = data
-
     this.panelCtrl.submit = this.submit()
+    this.panelCtrl.initTimer = this.tryInitForm()
   }
 
   showForm(){   
     utils.showModal('setter_form.html', this.panelCtrl)
-
     this.panelCtrl.tryCount = 1
-    this.tryInitForm()
   }
 
   tryInitForm(){
@@ -60,6 +58,11 @@ export class TimeSetterCtrl {
       const line = this.panelCtrl.productionLine.production_line
       const time = this.panelCtrl.productionLine.start_time
 
+      if (!this.isTimeValid(time)){
+        utils.alert('warning', 'Time Format Invalid', 'The Time Format is invvalid, please enter a valid time Format h:mm:ss')
+        return
+      }
+
       const url = postgres.getUrl(this.panelCtrl.productionLine)
       const query = postgres.getQuery(time)
 
@@ -73,5 +76,12 @@ export class TimeSetterCtrl {
         this.panelCtrl.timeSrv.refreshDashboard()
       })
     }
+  }
+
+  isTimeValid(time) {
+    if(time === '') { return false }
+    const items = time.split(':')
+    if (items.length !== 3) { return false }
+    return true
   }
 }

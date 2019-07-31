@@ -10,7 +10,7 @@
     </a>
   </div>
 
-  <form class="form" id="prodLine-ts-form">
+  <form class="form" id="prodLine-ts-form" name="form">
     <div class="modal-content" id="modal-modal-content">
       <div class="text-left">
           <div>
@@ -41,7 +41,7 @@
             <div class="right-group" style="float:right">
               <p style="margin: 20px 65px 0px 5px">Start Time:</p>
               <div>
-                <input style=" width:180px; margin: 0px 23px 0px 0px" id="start-time-picker" ng-model="model.productionLine.start_time" ng-change="model.showTime()" class="prodLine-ts-datalist-input" name="startTime">
+                <input style=" width:180px; margin: 0px 23px 0px 0px" id="start-time-picker" ng-model="model.productionLine.start_time" ng-init="model.initTimer()" class="prodLine-ts-datalist-input" name="startTime" required>
               </div>
             </div>
           </div>
@@ -66,6 +66,7 @@
           type="button"
           class="btn btn-success"
           style="width:9rem"
+          ng-disabled="form.$invalid"
           ng-click = "model.submit()"
         >
           Submit

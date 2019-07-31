@@ -44,17 +44,15 @@ System.register(['./utils', './postgresHelper'], function (_export, _context) {
 
           this.panelCtrl = ctrl;
           this.panelCtrl.productionLine = data;
-
           this.panelCtrl.submit = this.submit();
+          this.panelCtrl.initTimer = this.tryInitForm();
         }
 
         _createClass(TimeSetterCtrl, [{
           key: 'showForm',
           value: function showForm() {
             utils.showModal('setter_form.html', this.panelCtrl);
-
             this.panelCtrl.tryCount = 1;
-            this.tryInitForm();
           }
         }, {
           key: 'tryInitForm',
@@ -107,6 +105,11 @@ System.register(['./utils', './postgresHelper'], function (_export, _context) {
               var line = _this2.panelCtrl.productionLine.production_line;
               var time = _this2.panelCtrl.productionLine.start_time;
 
+              if (!_this2.isTimeValid(time)) {
+                utils.alert('warning', 'Time Format Invalid', 'The Time Format is invvalid, please enter a valid time Format h:mm:ss');
+                return;
+              }
+
               var url = postgres.getUrl(_this2.panelCtrl.productionLine);
               var query = postgres.getQuery(time);
 
@@ -120,6 +123,18 @@ System.register(['./utils', './postgresHelper'], function (_export, _context) {
                 _this2.panelCtrl.timeSrv.refreshDashboard();
               });
             };
+          }
+        }, {
+          key: 'isTimeValid',
+          value: function isTimeValid(time) {
+            if (time === '') {
+              return false;
+            }
+            var items = time.split(':');
+            if (items.length !== 3) {
+              return false;
+            }
+            return true;
           }
         }]);
 
