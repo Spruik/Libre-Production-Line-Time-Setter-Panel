@@ -10,6 +10,7 @@ import {TimeSetterCtrl} from './time_setter_ctrl'
 
 import './css/style.css!';
 import './css/instant-serach.css!';
+import './css/timepicker.css!';
 
 const panelDefaults = {
   targets: [{}],

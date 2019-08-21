@@ -1,6 +1,6 @@
 'use strict';
 
-System.register(['lodash', 'jquery', 'app/plugins/sdk', './transformers', './editor', './column_options', './renderer', './utils', './time_setter_ctrl', './css/style.css!', './css/instant-serach.css!'], function (_export, _context) {
+System.register(['lodash', 'jquery', 'app/plugins/sdk', './transformers', './editor', './column_options', './renderer', './utils', './time_setter_ctrl', './css/style.css!', './css/instant-serach.css!', './css/timepicker.css!'], function (_export, _context) {
   "use strict";
 
   var _, $, MetricsPanelCtrl, transformDataToTable, tablePanelEditor, columnOptionsTab, TableRenderer, utils, TimeSetterCtrl, _createClass, _get, panelDefaults, _allData, TableCtrl;
@@ -54,7 +54,7 @@ System.register(['lodash', 'jquery', 'app/plugins/sdk', './transformers', './edi
       utils = _utils;
     }, function (_time_setter_ctrl) {
       TimeSetterCtrl = _time_setter_ctrl.TimeSetterCtrl;
-    }, function (_cssStyleCss) {}, function (_cssInstantSerachCss) {}],
+    }, function (_cssStyleCss) {}, function (_cssInstantSerachCss) {}, function (_cssTimepickerCss) {}],
     execute: function () {
       _createClass = function () {
         function defineProperties(target, props) {
