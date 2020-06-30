@@ -16,10 +16,8 @@ export const post = (url, line) => {
     function handleResponse () {
       if (xhr.readyState === 4) {
         if (xhr.status === 200) {
-          // console.log('200');
           resolve(xhr.responseText)
         } else if (xhr.status === 204) {
-          // console.log('204');
           resolve(xhr.responseText)
         } else if (xhr.status === 201) {
           resolve(xhr.responseText)
@@ -64,10 +62,8 @@ export const update = (url, line) => {
     function handleResponse () {
       if (xhr.readyState === 4) {
         if (xhr.status === 200) {
-          // console.log('200');
           resolve(xhr.responseText)
         } else if (xhr.status === 204) {
-          // console.log('204');
           resolve(xhr.responseText)
         } else if (xhr.status === 201) {
           resolve(xhr.responseText)
