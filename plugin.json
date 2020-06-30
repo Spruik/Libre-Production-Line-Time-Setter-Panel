@@ -14,15 +14,13 @@
       {"name": "Project site", "url": "https://github.com/Spruik/Libre-Production-Line-Time-Setter-Panel"},
       {"name": "Issues", "url": "https://github.com/Spruik/Libre-Production-Line-Time-Setter-Panel/issues"}
     ],
+    "logos": {
+      "small": "img/icn-table-panel.svg",
+      "large": "img/icn-table-panel.svg"
+    },
     "version": "1.0.0",
     "updated": "2020-06-30"
   },
-  
-  "logos": {
-    "small": "img/icn-table-panel.svg",
-    "large": "img/icn-table-panel.svg"
-  },
-
   "dependencies": {
     "grafanaVersion": "6.x.x",
     "plugins": [ ]
