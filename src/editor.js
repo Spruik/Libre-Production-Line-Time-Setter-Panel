@@ -4,8 +4,6 @@ import { transformers } from './transformers'
 export class TablePanelEditorCtrl {
   /** @ngInject */
   constructor ($scope, $q, uiSegmentSrv) {
-    console.log($scope.ctrl)
-
     $scope.editor = this
     this.panelCtrl = $scope.ctrl
     this.panel = this.panelCtrl.panel
