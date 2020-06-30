@@ -84,7 +84,7 @@ export function tablePanelEditor($q, uiSegmentSrv) {
   return {
     restrict: 'E',
     scope: true,
-    templateUrl: 'public/plugins/smart-factory-prod-line-time-setter-panel/partials/editor.html',
+    templateUrl: 'public/plugins/libre-production-line-time-setter-panel/partials/editor.html',
     controller: TablePanelEditorCtrl,
   };
 }

@@ -306,4 +306,4 @@ export class TableCtrl extends MetricsPanelCtrl {
 
 }
 
-TableCtrl.templateUrl = './partials/module.html';
+TableCtrl.templateUrl = 'public/plugins/libre-production-line-time-setter-panel/partials/module.html';

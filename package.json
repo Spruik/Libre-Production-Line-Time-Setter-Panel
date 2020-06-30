@@ -1,14 +1,14 @@
 {
-  "name": "smart-factory-prod-line-time-setter-panel",
+  "name": "libre-production-line-time-setter-panel",
   "version": "1.0.0",
-  "description": "A production line start time setter for Grafana",
+  "description": "Libre panel to set a Production Line start time",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Spruik/smart-factory-prod-line-time-setter-panel"
+    "url": "https://github.com/Spruik/Libre-Production-Line-Time-Setter-Panel"
   },
   "author": "Spruik Technologies",
   "bugs": {
-    "url": "https://github.com/Spruik/smart-factory-prod-line-time-setter-panel/issues"
+    "url": "https://github.com/Spruik/Libre-Production-Line-Time-Setter-Panel/issues"
   },
   "main": "src/module.js",
   "scripts": {
