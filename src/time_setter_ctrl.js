@@ -2,37 +2,36 @@ import * as utils from './utils'
 import * as postgres from './postgresHelper'
 
 export class TimeSetterCtrl {
-
   /** @ngInject */
-  constructor(ctrl, data) {
-    this.panelCtrl = ctrl;
+  constructor (ctrl, data) {
+    this.panelCtrl = ctrl
     this.panelCtrl.productionLine = data
     this.panelCtrl.submit = this.submit()
     this.panelCtrl.initTimer = this.tryInitForm()
   }
 
-  showForm(){   
+  showForm () {
     utils.showModal('setter_form.html', this.panelCtrl)
     this.panelCtrl.tryCount = 1
   }
 
-  tryInitForm(){
+  tryInitForm () {
     setTimeout(() => {
-      try{
+      try {
         this.startInitForm()
-      }catch(e){
+      } catch (e) {
         if (this.panelCtrl.tryCount < 15) {
-          this.panelCtrl.tryCount ++
+          this.panelCtrl.tryCount++
           this.tryInitForm()
-        }else {
+        } else {
           this.closeForm()
           utils.alert('error', 'Error', 'Form initialisation failed due to "' + e + '", please try agian')
         }
       }
-    }, 200);
+    }, 200)
   }
 
-  startInitForm(){
+  startInitForm () {
     $('#start-time-picker').timepicker({
       showMeridian: false,
       showSeconds: true,
@@ -41,24 +40,24 @@ export class TimeSetterCtrl {
       secondStep: 1,
       defaultTime: this.panelCtrl.productionLine.start_time || '6:00:00',
       icons: {
-          up: 'fa fa-chevron-up',
-          down: 'fa fa-chevron-down'
+        up: 'fa fa-chevron-up',
+        down: 'fa fa-chevron-down'
       }
     })
   }
 
-  closeForm(){
+  closeForm () {
     $('#prodLine-ts-form-close-btn').trigger('click')
   }
-  
-  submit(){
+
+  submit () {
     return () => {
       const site = this.panelCtrl.productionLine.site
       const area = this.panelCtrl.productionLine.area
       const line = this.panelCtrl.productionLine.production_line
       const time = this.panelCtrl.productionLine.start_time
 
-      if (!this.isTimeValid(time)){
+      if (!this.isTimeValid(time)) {
         utils.alert('warning', 'Time Format Invalid', 'The Time Format is invvalid, please enter a valid time Format h:mm:ss')
         return
       }
@@ -78,8 +77,8 @@ export class TimeSetterCtrl {
     }
   }
 
-  isTimeValid(time) {
-    if(time === '') { return false }
+  isTimeValid (time) {
+    if (time === '') { return false }
     const items = time.split(':')
     if (items.length !== 3) { return false }
     return true

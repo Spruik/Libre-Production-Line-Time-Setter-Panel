@@ -9,7 +9,7 @@ export const post = (url, line) => {
     var xhr = new XMLHttpRequest()
     xhr.open('POST', url)
     xhr.onreadystatechange = handleResponse
-    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
     xhr.onerror = e => reject(e)
     xhr.send(line)
 
@@ -33,22 +33,22 @@ export const post = (url, line) => {
 
 export const get = url => {
   return new Promise((resolve, reject) => {
-      var xhr = new XMLHttpRequest()
-      xhr.open('GET', url)
-      xhr.onreadystatechange = handleResponse
-      xhr.onerror = e => reject(e)
-      xhr.send()
+    var xhr = new XMLHttpRequest()
+    xhr.open('GET', url)
+    xhr.onreadystatechange = handleResponse
+    xhr.onerror = e => reject(e)
+    xhr.send()
 
-      function handleResponse () {
+    function handleResponse () {
       if (xhr.readyState === 4) {
-          if (xhr.status === 200) {
+        if (xhr.status === 200) {
           var res = JSON.parse(xhr.responseText)
           resolve(res)
-          } else {
+        } else {
           reject(this.statusText)
-          }
+        }
       }
-      }
+    }
   })
 }
 
@@ -57,7 +57,7 @@ export const update = (url, line) => {
     var xhr = new XMLHttpRequest()
     xhr.open('PATCH', url)
     xhr.onreadystatechange = handleResponse
-    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
     xhr.onerror = e => reject(e)
     xhr.send(line)
 
@@ -92,9 +92,9 @@ export const showModal = (html, data) => {
 }
 
 export const mergeColsRows = (cols, rows) => {
-  let result = []
+  const result = []
   rows.forEach(row => {
-    let obj = {}
+    const obj = {}
     cols.forEach((col, index) => {
       obj[col.text] = row[index]
     })
