@@ -1,25 +1,33 @@
 {
+  "id": "libre-production-line-time-setter-panel",
+  "name": "Production Line Time Setter",
   "type": "panel",
-  "name": "ProdLine Time Setter",
-  "id": "smart-factory-prod-line-time-setter-panel",
-
   "info": {
-    "description": "A production line start time setter for Grafana",
-    "keywords": ["table", "panel"],
+    "author": {
+      "name": "Spruik Technologies",
+      "email": "info@spruiktec.com",
+      "url": "https://spruiktec.com"
+    },
+    "description": "Libre panel to set a Production Line start time",
+    "keywords": ["table", "panel", "libre"],
     "links": [
-      {"name": "Project site", "url": "https://github.com/Spruik/smart-factory-prod-line-time-setter-panel"}
+      {"name": "Project site", "url": "https://github.com/Spruik/Libre-Production-Line-Time-Setter-Panel"},
+      {"name": "Issues", "url": "https://github.com/Spruik/Libre-Production-Line-Time-Setter-Panel/issues"}
+    ],
+    "logos": {
+      "small": "img/icn-table-panel.svg",
+      "large": "img/icn-table-panel.svg"
+    },
+    "screenshots": [
+      {"name": "Panel", "url": "public/plugins/libre-production-line-time-setter-panel/docs/libre-production-line-time-setter-panel.png"},
+      {"name": "Setting", "url": "public/plugins/libre-production-line-time-setter-panel/docs/libre-production-line-time-setter-panel-setter.png"},
+      {"name": "Metrics", "url": "public/plugins/libre-production-line-time-setter-panel/docs/libre-production-line-time-setter-panel-metrics.png"}
     ],
     "version": "1.0.0",
-    "updated": "2019-04-19"
+    "updated": "2020-06-30"
   },
-  
-  "logos": {
-    "small": "img/icn-table-panel.svg",
-    "large": "img/icn-table-panel.svg"
-  },
-
   "dependencies": {
-    "grafanaVersion": "4.x.x",
+    "grafanaVersion": "6.x.x",
     "plugins": [ ]
   }
 }
