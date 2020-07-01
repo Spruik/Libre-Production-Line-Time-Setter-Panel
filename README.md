@@ -143,10 +143,10 @@ Start docker-compose.dev.yml detached
 ```shell
 ~/libre-production-line-time-setter-panel
 $ docker-compose -f docker-compose.dev.yml up -d
-Starting libre-opation-crud-table-panel_postgres_1
-Starting libre-opation-crud-table-panel_postrest_1
-Starting libre-opation-crud-table-panel_simulator_1
-Starting libre-opation-crud-table-panel_grafana_1
+Starting libre-production-line-time-setter-panel_postgres_1
+Starting libre-production-line-time-setter-panel_postrest_1
+Starting libre-production-line-time-setter-panel_simulator_1
+Starting libre-production-line-time-setter-panel_grafana_1
 ```
 
 Run grunt watch to recompile on change
