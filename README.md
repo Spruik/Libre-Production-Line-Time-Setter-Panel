@@ -225,4 +225,11 @@ For any issue, there are fundamentally three ways an individual can contribute:
 
 ## Change log
 
+- 1.0.1 Documentation Update
+  - Fix subtitle & project clone path
+  - Update package-lock.json
+  - Rename extension yml to yaml
+  - Remove unused grunt config
+  - Fix docker-compose up output
+
 - 1.0.0 Initial Public Release
