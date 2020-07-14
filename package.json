@@ -1,6 +1,6 @@
 {
   "name": "libre-production-line-time-setter-panel",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Libre panel to set a Production Line start time",
   "repository": {
     "type": "git",

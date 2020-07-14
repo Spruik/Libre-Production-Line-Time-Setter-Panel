@@ -225,6 +225,10 @@ For any issue, there are fundamentally three ways an individual can contribute:
 
 ## Change log
 
+- 1.0.2 Security Updates
+  - Bump mixin-deep from 1.3.1 to 1.3.2
+  - Bump lodash from 4.17.11 to 4.17.13
+
 - 1.0.1 Documentation Update
   - Fix subtitle & project clone path
   - Update package-lock.json
