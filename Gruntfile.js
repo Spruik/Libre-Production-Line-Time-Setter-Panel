@@ -35,18 +35,6 @@ module.exports = function (grunt) {
           process: content => content.replace(/(\'|")ion.rangeSlider(\'|")/g, '$1./ion.rangeSlider.min$2'), // eslint-disable-line
         }
       },
-      echarts_libs: {
-        cwd: 'node_modules/echarts/dist',
-        expand: true,
-        src: ['echarts.min.js'],
-        dest: 'dist/libs/'
-      },
-      image_to_dist: {
-        cwd: 'src',
-        expand: true,
-        src: ['src/image/**/*'],
-        dest: 'dist/image/'
-      },
       pluginDef: {
         expand: true,
         src: ['plugin.json'],
@@ -109,13 +97,11 @@ module.exports = function (grunt) {
     }
   })
   grunt.registerTask('default', [
-    // 'jshint',
     'clean',
     'copy:src_to_dist',
     'copy:libs',
     'copy:readme',
     'copy:pluginDef',
-    'copy:image_to_dist',
     'babel'])
 
   grunt.registerTask('build', [
