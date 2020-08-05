@@ -103,9 +103,7 @@ $ cd ./Libre-Production-Line-Time-Setter-Panel
 ~/Libre-Production-Line-Time-Setter-Panel
 $ npm install
 ...
-added 714 packages from 399 contributors and audited 719 packages in 11.871s
-found 42 vulnerabilities (11 low, 6 moderate, 25 high)
-  run `npm audit fix` to fix them, or `npm audit` for details
+added 417 packages in 6.822s
 ```
 
 Install Grunt globally
@@ -141,7 +139,7 @@ Copied 1 file
 
 Running "babel:dist" (babel) task
 
-Done, without errors.
+Done.
 
 ```
 
@@ -184,7 +182,7 @@ Running "clean:0" (clean) task
 >> 1 path cleaned.
 
 Running "clean:1" (clean) task
->> 1 path cleaned.
+>> 0 paths cleaned.
 
 Running "clean:0" (clean) task
 >> 0 paths cleaned.
@@ -209,7 +207,10 @@ Running "babel:dist" (babel) task
 Running "compress:main" (compress) task
 >> Compressed 40 files.
 
-Done, without errors.
+Running "compress:tar" (compress) task
+>> Compressed 40 files.
+
+Done.
 
 ```
 
@@ -224,6 +225,13 @@ For any issue, there are fundamentally three ways an individual can contribute:
 - By helping to resolve the issue: Typically, this is done either in the form of demonstrating that the issue reported is not a problem after all, or more often, by opening a Pull Request that changes some bit of something in the panel in a concrete and reviewable manner.
 
 ## Change log
+
+- 1.0.3 Add tar build output
+  - Add tar build outout
+  - Remove unused libraries
+  - Fix npm audit
+  - Update README shell outputs
+  - Bump Revision
 
 - 1.0.2 Security Updates
   - Bump mixin-deep from 1.3.1 to 1.3.2
