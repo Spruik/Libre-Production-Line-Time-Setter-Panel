@@ -1,12 +1,14 @@
 module.exports = function (grunt) {
   require('load-grunt-tasks')(grunt)
 
-  grunt.loadNpmTasks('grunt-execute')
-  grunt.loadNpmTasks('grunt-contrib-clean')
-  grunt.loadNpmTasks('grunt-multi-dest')
   grunt.loadNpmTasks('grunt-babel')
-  grunt.loadNpmTasks('grunt-force-task')
+  grunt.loadNpmTasks('grunt-contrib-clean')
+  grunt.loadNpmTasks('grunt-contrib-compress')
+  grunt.loadNpmTasks('grunt-contrib-copy')
   grunt.loadNpmTasks('grunt-contrib-jshint')
+  grunt.loadNpmTasks('grunt-contrib-watch')
+  grunt.loadNpmTasks('grunt-multi-dest')
+  grunt.loadNpmTasks('grunt-string-replace')
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -89,6 +91,14 @@ module.exports = function (grunt) {
       main: {
         options: {
           archive: 'libre-production-line-time-setter-panel.zip'
+        },
+        expand: true,
+        cwd: 'dist/',
+        src: ['**/*']
+      },
+      tar: {
+        options: {
+          archive: 'libre-production-line-time-setter-panel.tar.gz'
         },
         expand: true,
         cwd: 'dist/',
