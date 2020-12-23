@@ -226,6 +226,11 @@ For any issue, there are fundamentally three ways an individual can contribute:
 
 ## Change log
 
+- 1.0.4
+  - Fix modal url
+  - Bump ini from 1.3.5 to 1.3.8
+  - Bump bl from 4.0.2 to 4.0.3
+
 - 1.0.3 Add tar build output
   - Add tar build outout
   - Remove unused libraries
