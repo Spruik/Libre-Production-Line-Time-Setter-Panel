@@ -25,7 +25,7 @@ export class TimeSetterCtrl {
           this.tryInitForm()
         } else {
           this.closeForm()
-          utils.alert('error', 'Error', 'Form initialisation failed due to "' + e + '", please try agian')
+          utils.alert('error', 'Error', 'Form initialisation failed due to "' + e + '", please try again')
         }
       }
     }, 200)
@@ -33,18 +33,18 @@ export class TimeSetterCtrl {
 
   startInitForm () {
     $('#start-time-picker').timepicker({
-      showMeridian: false,
-      showSeconds: true,
-      maxHours: 24,
-      minuteStep: 1,
-      secondStep: 1,
-      defaultTime: this.panelCtrl.productionLine.start_time || '6:00:00',
-      icons: {
-        up: 'fa fa-chevron-up',
-        down: 'fa fa-chevron-down'
-      }
-    })
-  }
+        showMeridian: false,
+        showSeconds: true,
+        maxHours: 24,
+        minuteStep: 1,
+        secondStep: 1,
+        defaultTime: this.panelCtrl.productionLine.start_time || '6:00:00',
+        icons: {
+          up: 'fa fa-chevron-up',
+          down: 'fa fa-chevron-down'
+        }
+      })
+    } 
 
   closeForm () {
     $('#prodLine-ts-form-close-btn').trigger('click')
@@ -58,7 +58,7 @@ export class TimeSetterCtrl {
       const time = this.panelCtrl.productionLine.start_time
 
       if (!this.isTimeValid(time)) {
-        utils.alert('warning', 'Time Format Invalid', 'The Time Format is invvalid, please enter a valid time Format h:mm:ss')
+        utils.alert('warning', 'Time Format Invalid', 'The Time Format is invalid, please enter a valid time Format h:mm:ss')
         return
       }
 
@@ -71,7 +71,7 @@ export class TimeSetterCtrl {
         this.panelCtrl.timeSrv.refreshDashboard()
       }).catch(e => {
         this.closeForm()
-        utils.alert('error', 'Error', 'Start time update failed due to "' + e + '", please try agian')
+        utils.alert('error', 'Error', 'Start time update failed due to "' + e + '", please try again')
         this.panelCtrl.timeSrv.refreshDashboard()
       })
     }

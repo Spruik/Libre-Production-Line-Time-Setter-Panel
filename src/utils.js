@@ -81,7 +81,7 @@ export const alert = (type, title, msg) => {
 
 export const showModal = (html, data) => {
   appEvents.emit('show-modal', {
-    src: 'public/plugins/libre-prod-line-time-setter-panel/partials/' + html,
+    src: 'public/plugins/libre-production-line-time-setter-panel/partials/' + html,
     modalClass: 'confirm-modal',
     model: data
   })
